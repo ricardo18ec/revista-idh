@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Humano: Realidad y Desafíos en Guatemala</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #fdfcf8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3c6e47;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        section {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        h2 {
+            color: #3c6e47;
+            border-bottom: 2px solid #bfa77a;
+            padding-bottom: 5px;
+        }
+        .infografia {
+            text-align: center;
+            background-color: #e6e0d0;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #3c6e47;
+            color: white;
+        }
+        .grafica {
+            text-align: center;
+            margin: 20px 0;
+        }
+        footer {
+            background-color: #3c6e47;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Desarrollo Humano: Realidad y Desafíos en Guatemala</h1>
+    </header>
+
+    <section>
+        <h2>Introducción al tema</h2>
+        <p>
+            El desarrollo humano se entiende como el proceso mediante el cual las personas amplían sus oportunidades, mejoran sus condiciones de vida y logran satisfacer sus necesidades básicas, tanto materiales como sociales y culturales. En Guatemala, este concepto se ha convertido en un desafío persistente debido a las desigualdades económicas, la exclusión social y la falta de acceso equitativo a la educación, la salud y el empleo digno. A lo largo de las últimas décadas, los indicadores del Índice de Desarrollo Humano (IDH) han mostrado avances modestos, pero aún se evidencian brechas profundas entre zonas urbanas y rurales, así como entre grupos étnicos. Comprender estas diferencias resulta fundamental para promover políticas más justas e inclusivas que impulsen el bienestar integral de todos los guatemaltecos.
+        </p>
+    </section>
+
+    <section class="infografia">
+        <h2>Infografía: Componentes del Índice de Desarrollo Humano (IDH)</h2>
+        <p>El IDH se basa en tres dimensiones fundamentales que reflejan el bienestar y las oportunidades de las personas:</p>
+        <ul style="list-style:none; padding:0;">
+            <li>🩺 <strong>Salud:</strong> esperanza de vida al nacer.</li>
+            <li>📚 <strong>Educación:</strong> años promedio y esperados de escolaridad.</li>
+            <li>💰 <strong>Nivel de vida:</strong> ingreso nacional bruto per cápita.</li>
+        </ul>
+        <img src="infografia.png" alt="Infografía sobre desarrollo humano" width="80%">
+    </section>
+
+    <section>
+        <h2>¿Sabías que...?</h2>
+        <ul>
+            <li>Guatemala ocupa el puesto 135 de 193 países en el Índice de Desarrollo Humano (PNUD, 2023).</li>
+            <li>Más del 50% de la población vive en condiciones de pobreza, y un 15% en pobreza extrema.</li>
+            <li>El acceso a la educación media es uno de los más bajos de América Latina.</li>
+            <li>Las mujeres y comunidades indígenas presentan los niveles más bajos de acceso a oportunidades laborales formales.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Tabla comparativa del desarrollo humano en Guatemala y Centroamérica</h2>
+        <table>
+            <tr>
+                <th>País</th>
+                <th>IDH (2023)</th>
+                <th>Esperanza de vida</th>
+                <th>Años promedio de escolaridad</th>
+            </tr>
+            <tr>
+                <td>Guatemala</td>
+                <td>0.660</td>
+                <td>70.5</td>
+                <td>6.5</td>
+            </tr>
+            <tr>
+                <td>Costa Rica</td>
+                <td>0.809</td>
+                <td>80.3</td>
+                <td>8.8</td>
+            </tr>
+            <tr>
+                <td>El Salvador</td>
+                <td>0.680</td>
+                <td>73.2</td>
+                <td>7.5</td>
+            </tr>
+            <tr>
+                <td>Honduras</td>
+                <td>0.621</td>
+                <td>72.5</td>
+                <td>6.2</td>
+            </tr>
+        </table>
+        <p>
+            En comparación con otros países de Centroamérica, Guatemala presenta un Índice de Desarrollo Humano inferior al promedio regional. Su bajo nivel educativo y la desigualdad económica afectan directamente las oportunidades de progreso social, especialmente en comunidades rurales e indígenas.
+        </p>
+    </section>
+
+    <section class="grafica">
+        <h2>Evolución del IDH en Guatemala (2010–2023)</h2>
+        <canvas id="idhGuatemala" width="800" height="400"></canvas>
+        <p>
+            Aunque el IDH de Guatemala ha mejorado gradualmente en los últimos años, su crecimiento sigue siendo lento en comparación con otros países de la región, reflejando desafíos en educación y equidad.
+        </p>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+          const ctx = document.getElementById('idhGuatemala').getContext('2d');
+          new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: ['2010', '2012', '2014', '2016', '2018', '2020', '2021', '2022', '2023'],
+              datasets: [{
+                label: 'IDH Guatemala',
+                data: [0.615, 0.626, 0.636, 0.646, 0.653, 0.657, 0.659, 0.660, 0.663],
+                borderColor: '#3c6e47',
+                borderWidth: 3,
+                tension: 0.3,
+                fill: false,
+                pointBackgroundColor: '#bfa77a'
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: false,
+                  min: 0.6,
+                  max: 0.7,
+                  title: {
+                    display: true,
+                    text: 'Índice de Desarrollo Humano (IDH)'
+                  }
+                },
+                x: {
+                  title: {
+                    display: true,
+                    text: 'Año'
+                  }
+                }
+              }
+            }
+          });
+        </script>
+    </section>
+
+    <section>
+        <h2>Una voz del territorio: Testimonio de José</h2>
+        <p>
+            José, un joven del departamento de Alta Verapaz, relata que para poder estudiar debe caminar más de una hora diaria hasta la escuela. Su comunidad no cuenta con acceso a internet estable ni con suficientes docentes. A pesar de estas limitaciones, José sueña con ser ingeniero y contribuir al desarrollo de su pueblo. Su historia refleja la realidad de miles de jóvenes guatemaltecos que luchan contra las barreras geográficas y tecnológicas para alcanzar una mejor calidad de vida.
+        </p>
+        <p><strong>Reflexión sobre el testimonio:</strong> El caso de José muestra cómo las desigualdades territoriales impactan directamente en las oportunidades de desarrollo. Su esfuerzo simboliza la importancia de la resiliencia y la necesidad de políticas que garanticen una educación inclusiva y accesible para todos los sectores del país.</p>
+    </section>
+
+    <section>
+        <h2>Reflexión personal</h2>
+        <p>
+            En mi experiencia personal, he observado que las diferencias geográficas y sociales influyen significativamente en el acceso a la educación. Algunos compañeros que viven en comunidades rurales enfrentan obstáculos como la falta de transporte, conectividad o recursos tecnológicos, lo cual limita sus oportunidades de aprendizaje. Esta realidad evidencia cómo la brecha digital afecta especialmente a los grupos sociales más vulnerables, como las comunidades indígenas o de escasos recursos, impidiendo una participación equitativa en el entorno educativo.
+        </p>
+        <p>
+            Para mí, una educación de calidad significa mucho más que adquirir conocimientos: implica tener igualdad de condiciones, docentes capacitados, acceso a tecnología y un ambiente que fomente el pensamiento crítico y la empatía. La educación debe ser una herramienta para transformar vidas, reducir desigualdades y construir una sociedad más justa y solidaria.
+        </p>
+    </section>
+
+    <section>
+        <h2>Referencias</h2>
+        <ul>
+            <li>Programa de las Naciones Unidas para el Desarrollo (PNUD). (2023). <i>Informe sobre desarrollo humano 2023/2024</i>. https://hdr.undp.org</li>
+            <li>Instituto Nacional de Estadística de Guatemala (INE). (2023). <i>Indicadores sociales y demográficos</i>. https://www.ine.gob.gt</li>
+            <li>Banco Mundial. (2023). <i>Datos sobre desarrollo humano: Guatemala</i>. https://data.worldbank.org</li>
+            <li>Ministerio de Educación de Guatemala. (2022). <i>Acceso y calidad educativa en zonas rurales</i>. https://www.mineduc.gob.gt</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 Revista Digital sobre Desarrollo Humano en Guatemala | Universidad del Valle de Guatemala</p>
+    </footer>
+</body>
+</html>
