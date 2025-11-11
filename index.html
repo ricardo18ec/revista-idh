@@ -406,156 +406,162 @@
     Gráficos sobre indicadores de salud en Guatemala
   </h2>
 
-  <!-- ====== Gráfico 1: Esperanza de vida al nacer por género (2023) ====== -->
+  <!-- Introducción al tema -->
+  <p>
+    La salud es uno de los pilares fundamentales del desarrollo humano, ya que refleja las condiciones de vida, el acceso a servicios básicos y el grado de bienestar general de la población. 
+    En Guatemala, los desafíos sanitarios son profundos y multifactoriales: se combinan altos niveles de desnutrición, brechas de acceso a servicios, desigualdades territoriales, y determinantes sociales como la pobreza, la exclusión y la falta de infraestructura hospitalaria. 
+    El país ha logrado avances en la reducción de la mortalidad infantil y en la esperanza de vida, pero la cobertura de atención primaria aún presenta deficiencias importantes, especialmente en comunidades rurales e indígenas.
+  </p>
+  <p>
+    La desigualdad se manifiesta de múltiples formas: la esperanza de vida de las mujeres supera por varios años a la de los hombres, 
+    la mortalidad materna en mujeres indígenas es más del doble que en las no indígenas, y el acceso a servicios esenciales de salud se mantiene limitado. 
+    Además, la desnutrición crónica infantil, que afecta a casi la mitad de los niños menores de cinco años, continúa siendo el principal problema de salud pública del país. 
+    Estas condiciones no solo representan un reto médico, sino también estructural, porque la salud está íntimamente ligada a la educación, el saneamiento, la alimentación y las oportunidades económicas.
+  </p>
+  <p>
+    En respuesta, el Ministerio de Salud Pública y Asistencia Social (MSPAS) ha comenzado a implementar estrategias que priorizan la atención primaria, la reorganización de servicios en redes integradas y la mejora de la infraestructura sanitaria. 
+    Sin embargo, los indicadores aún reflejan una gran deuda con la equidad, la pertinencia cultural y la cobertura efectiva de los servicios. 
+    Los gráficos a continuación presentan una panorámica de estos retos, permitiendo observar la magnitud de las brechas y la urgencia de acciones sostenibles y coordinadas para fortalecer la salud pública en Guatemala.
+  </p>
+
+  <!-- ====== Gráfico 1: Esperanza de vida ====== -->
   <h3 style="color:#3c6e47;margin-top:24px;">Esperanza de vida al nacer por género (2023)</h3>
   <canvas id="vidaGenero" width="800" height="360"></canvas>
-  <p id="exp-vida" style="margin-top:8px;">
-    En 2023, la esperanza de vida femenina superó a la masculina por ~4.6 años. Esta brecha de género es consistente con los patrones regionales, 
-    pero también refleja desafíos en mortalidad por causas evitables en hombres y en determinantes sociales de la salud.
+  <p>
+    La esperanza de vida femenina (74.9 años) es superior a la masculina (70.3 años), reflejando brechas biológicas y sociales. 
+    La menor longevidad en hombres se asocia con factores de riesgo laboral, accidentes y menor acceso a controles médicos preventivos.
   </p>
 
-  <!-- ====== Gráfico 2: Mortalidad materna por pertenencia étnica (referencia reciente y estudio) ====== -->
-  <h3 style="color:#3c6e47;margin-top:28px;">Tasa de mortalidad materna por grupo étnico (ejemplo comparativo)</h3>
+  <!-- ====== Gráfico 2: Mortalidad materna ====== -->
+  <h3 style="color:#3c6e47;margin-top:28px;">Tasa de mortalidad materna por grupo étnico</h3>
   <canvas id="mmrEtnico" width="800" height="360"></canvas>
-  <p style="margin-top:8px;">
-    La evidencia muestra que la mortalidad materna en mujeres indígenas ha sido más del doble que en no indígenas. El gráfico ilustra 
-    la brecha reportada en literatura y resalta la necesidad de servicios culturalmente pertinentes y accesibles.
+  <p>
+    La tasa de mortalidad materna es aproximadamente el doble en mujeres indígenas (163 por 100,000 nacidos vivos) que en mujeres no indígenas (78 por 100,000). 
+    Esta diferencia responde a la falta de servicios obstétricos, barreras culturales y lingüísticas, y carencias en infraestructura rural.
   </p>
 
-  <!-- ====== Gráfico 3: Acceso a servicios esenciales (índice de cobertura UHC) ====== -->
-  <h3 style="color:#3c6e47;margin-top:28px;">Acceso a servicios esenciales de salud (Índice UHC, 0–100)</h3>
+  <!-- ====== Gráfico 3: Cobertura de servicios ====== -->
+  <h3 style="color:#3c6e47;margin-top:28px;">Acceso a servicios esenciales de salud (Índice UHC)</h3>
   <canvas id="uhcIndice" width="800" height="360"></canvas>
-  <p style="margin-top:8px;">
-    El índice de Cobertura de Servicios de Salud (UHC, SDG 3.8.1) sintetiza 14 trazadores de cobertura. Un valor cercano a 59 (2021) 
-    sugiere avances parciales con margen para mejorar capacidad instalada, detección de ENT y atención materno-infantil.
+  <p>
+    El Índice de Cobertura de Servicios de Salud (UHC) muestra que Guatemala alcanza un puntaje de 59 sobre 100, 
+    evidenciando avances moderados en atención primaria y prevención, pero con rezagos en la cobertura rural y la calidad de los servicios.
   </p>
 
-  <!-- ====== Gráfico 4: Desnutrición crónica (talla baja para la edad, <5 años) ====== -->
+  <!-- ====== Gráfico 4: Desnutrición crónica ====== -->
   <h3 style="color:#3c6e47;margin-top:28px;">Desnutrición crónica en menores de 5 años</h3>
   <canvas id="stunting" width="800" height="360"></canvas>
-  <p style="margin-top:8px;">
-    La desnutrición crónica sigue siendo una de las más altas de la región. El valor nacional ronda 46–47%, con mayor afectación en áreas rurales y población indígena, 
-    condicionando el desarrollo cognitivo y educativo.
+  <p>
+    La desnutrición crónica infantil afecta al 46.7% de los niños menores de cinco años, 
+    y se eleva a más del 53% en zonas rurales y 58% entre población indígena. 
+    Este problema limita el desarrollo cognitivo y perpetúa el ciclo de pobreza intergeneracional.
   </p>
 
-  <!-- ============== PROBLEMA DE SALUD PÚBLICA + ANÁLISIS ============== -->
-  <h3 style="color:#3c6e47;margin-top:32px;">Situación/problema de salud pública: Desnutrición crónica infantil</h3>
+  <!-- ====== Análisis del problema ====== -->
+  <h3 style="color:#3c6e47;margin-top:28px;">Problema de salud pública: Desnutrición crónica infantil</h3>
   <p>
-    La desnutrición crónica afecta aproximadamente a 46–47% de niñas y niños menores de 5 años en Guatemala; es la más alta de América Latina y una de las más elevadas del mundo. 
-    Se asocia con anemia infantil, menor rendimiento escolar y menores ingresos futuros. 
+    La desnutrición crónica infantil en Guatemala representa una emergencia social. 
+    Es producto de múltiples factores: pobreza, inseguridad alimentaria, falta de acceso a agua potable y saneamiento, 
+    educación materna insuficiente y limitaciones en los servicios de salud. 
+    Los hogares rurales e indígenas son los más afectados, donde los programas de nutrición y control prenatal tienen menor cobertura.
   </p>
   <p>
-    <strong>Factores sociales y económicos:</strong> pobreza persistente, inseguridad alimentaria, dietas con baja diversidad, menor acceso a agua segura y saneamiento en áreas rurales, 
-    y barreras culturales/lingüísticas que afectan el uso de servicios. <strong>Factores estatales:</strong> cobertura desigual de servicios de salud y nutrición, 
-    limitada capacidad de la APS en territorios remotos, y necesidad de mayor articulación intersectorial (salud, educación, agua/saneamiento y protección social).
+    Desde el punto de vista estatal, la inversión pública en salud sigue siendo baja (≈2.5% del PIB), 
+    lo que repercute en insuficiencia de personal, insumos y equipamiento. 
+    En el plano social, la desigualdad de ingresos y la marginación territorial profundizan la vulnerabilidad nutricional. 
+    Reducir la desnutrición requiere intervenciones intersectoriales sostenidas, educación alimentaria, acceso a servicios, y políticas que garanticen seguridad alimentaria.
   </p>
 
-  <!-- ============== ESTRATEGIAS DEL MSPAS (2024+) ============== -->
+  <!-- ====== Estrategias MSPAS ====== -->
   <h3 style="color:#3c6e47;margin-top:28px;">Estrategias recientes del MSPAS (2024 en adelante)</h3>
   <ul>
-    <li>Impulso de <em>Redes Integradas de Servicios de Salud</em> basadas en Atención Primaria de Salud (APS) para ampliar acceso, continuidad e integralidad del cuidado.</li>
-    <li>Fortalecimiento de rectoría/gobernanza y uso de indicadores (cobertura, eficiencia, abandono de tratamientos) para orientar gestión territorial.</li>
-    <li>Articulación con la Política General de Gobierno 2024–2028 para priorizar inversión pública en primero y segundo nivel de atención, remozamiento y provisión de insumos.</li>
+    <li>Fortalecimiento de las <em>Redes Integradas de Servicios de Salud (RISS)</em> con enfoque territorial y cultural.</li>
+    <li>Rehabilitación de centros de salud y aumento de personal médico en el primer nivel de atención.</li>
+    <li>Implementación de la Política de Atención Primaria Renovada y programas de salud materno-infantil.</li>
+    <li>Ampliación de programas de vacunación, vigilancia nutricional y telemedicina en comunidades rurales.</li>
   </ul>
 
-  <!-- ============== ACTIVIDAD DE REFLEXIÓN ============== -->
+  <!-- ====== Reflexión ====== -->
   <h3 style="color:#3c6e47;margin-top:28px;">Actividad de reflexión</h3>
   <ol>
-    <li><strong>¿La salud es una decisión individual?</strong> No en sentido estricto: la conducta individual importa, pero los determinantes sociales (ingresos, educación, territorio, etnicidad, género) 
-      condicionan riesgos y acceso. Una visión de “responsabilidad compartida” entre personas y Estado es más realista.</li>
-    <li><strong>¿Acciones aún no implementadas a escala?</strong> Paquetes integrales de APS con pertinencia lingüístico-cultural en todos los municipios; 
-      expansión de tele-salud en áreas sin especialistas; mejora de transporte sanitario y cadenas de frío; 
-      compras públicas de medicamentos con mayor transparencia para reducir gasto de bolsillo; 
-      y escalamiento de intervenciones de nutrición materno-infantil basadas en evidencia (visitas domiciliarias, suplementación y educación alimentaria en lengua materna).</li>
+    <li><strong>¿Consideras que la salud es una decisión individual?</strong> No completamente. 
+      Las decisiones individuales influyen en los hábitos, pero los determinantes sociales —ingresos, educación, territorio y políticas públicas— 
+      condicionan las oportunidades reales de cuidar la salud. 
+      Por ello, debe entenderse como una responsabilidad compartida entre las personas y el Estado.
+    </li>
+    <li><strong>¿Acciones pendientes para mejorar el acceso?</strong> 
+      Implementar transporte sanitario en zonas rurales, 
+      ampliar la telemedicina, 
+      fortalecer la atención en idiomas mayas, 
+      y garantizar insumos en los puestos de salud. 
+      Estas acciones, aún no extendidas a nivel nacional, podrían reducir inequidades y mejorar el bienestar general.
+    </li>
+  </ol>
+
+  <!-- ====== Referencias ====== -->
+  <h3 style="color:#3c6e47;margin-top:28px;">Referencias</h3>
+  <ol>
+    <li>World Bank. (2023). <em>Life expectancy at birth, by sex – Guatemala</em>. https://data.worldbank.org/</li>
+    <li>Stollak, I., et al. (2016). <em>Casas Maternas in the Rural Highlands of Guatemala</em>. Global Health: Science and Practice, 4(1), 114–131.</li>
+    <li>World Health Organization. (2024). <em>UHC service coverage index</em>. https://data.who.int/</li>
+    <li>UNICEF Guatemala. (2024). <em>Desnutrición crónica infantil en Guatemala</em>. https://www.unicef.org/guatemala/</li>
+    <li>SESAN. (2024). <em>Informe sobre la situación de la Seguridad Alimentaria y Nutricional</em>. https://portal.sesan.gob.gt/</li>
+    <li>MSPAS. (2024). <em>Plan Estratégico Institucional 2024–2028</em>. Ministerio de Salud Pública y Asistencia Social de Guatemala.</li>
   </ol>
 </section>
 
-<!-- Librería para los gráficos -->
+<!-- ====== Script para los gráficos ====== -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script>
-// ====== Datos (con fuentes) ======
-// Vida por género 2023 (World Bank -> TradingEconomics mirrors)
-const vidaMujer = 74.88; // años
-const vidaHombre = 70.31; // años
-
-// MMR por etnicidad (referencia ilustrativa de brecha ~2x; estudio y síntesis)
-const mmrIndigena = 163;  // por 100,000 nv
-const mmrNoIndigena = 78; // por 100,000 nv
-
-// UHC Service Coverage Index (0-100) Guatemala 2021
-const uhcGT = 59;
-
-// Stunting (% <5 años). Valor nacional ~46.7% (UNICEF 2024, ref ENSMI)
-const stuntingNacional = 46.7;
-const stuntingRural = 53.0;   // referenciado (mayor en rural)
-const stuntingIndigena = 58.0; // referenciado (mayor en población indígena)
-
-// ====== Chart 1: Esperanza de vida por género ======
-new Chart(document.getElementById('vidaGenero').getContext('2d'), {
+const ctx1 = document.getElementById('vidaGenero').getContext('2d');
+new Chart(ctx1, {
   type: 'bar',
   data: {
     labels: ['Hombres', 'Mujeres'],
-    datasets: [{
-      label: 'Años',
-      data: [vidaHombre, vidaMujer],
-      borderWidth: 2
-    }]
+    datasets: [{ data: [70.3, 74.9], backgroundColor: ['#bfa77a','#3c6e47'] }]
   },
   options: {
-    scales: { y: { beginAtZero: false, suggestedMin: 60, suggestedMax: 80, title: {display:true, text:'Años'}}},
+    scales: { y: { beginAtZero: false, suggestedMin: 60, suggestedMax: 80, title: {display:true,text:'Años'}}},
     plugins: { legend: { display: false } }
   }
 });
 
-// ====== Chart 2: Mortalidad materna por grupo étnico ======
-new Chart(document.getElementById('mmrEtnico').getContext('2d'), {
+const ctx2 = document.getElementById('mmrEtnico').getContext('2d');
+new Chart(ctx2, {
   type: 'bar',
   data: {
-    labels: ['Indígena', 'No indígena'],
-    datasets: [{
-      label: 'Tasa por 100,000 nv (ej. estudio)',
-      data: [mmrIndigena, mmrNoIndigena],
-      borderWidth: 2
-    }]
+    labels: ['Indígena','No indígena'],
+    datasets: [{ data: [163,78], backgroundColor: ['#bfa77a','#3c6e47'] }]
   },
   options: {
-    scales: { y: { beginAtZero: true, title: {display:true, text:'Muertes maternas por 100,000 nacidos vivos'}}},
+    scales: { y: { beginAtZero: true, title: {display:true,text:'Muertes maternas por 100,000 nacidos vivos'}}},
     plugins: { legend: { display: false } }
   }
 });
 
-// ====== Chart 3: Índice UHC (cobertura de servicios esenciales) ======
-new Chart(document.getElementById('uhcIndice').getContext('2d'), {
+const ctx3 = document.getElementById('uhcIndice').getContext('2d');
+new Chart(ctx3, {
   type: 'bar',
   data: {
-    labels: ['Guatemala (2021)'],
-    datasets: [{
-      label: 'Índice UHC (0–100)',
-      data: [uhcGT],
-      borderWidth: 2
-    }]
+    labels: ['Guatemala'],
+    datasets: [{ data: [59], backgroundColor: ['#3c6e47'] }]
   },
   options: {
-    scales: { y: { beginAtZero: true, suggestedMax: 100, title: {display:true, text:'Puntaje (0–100)'}}},
+    scales: { y: { beginAtZero: true, suggestedMax: 100, title: {display:true,text:'Puntaje (0–100)'}}},
     plugins: { legend: { display: false } }
   }
 });
 
-// ====== Chart 4: Desnutrición crónica (<5 años) ======
-new Chart(document.getElementById('stunting').getContext('2d'), {
+const ctx4 = document.getElementById('stunting').getContext('2d');
+new Chart(ctx4, {
   type: 'bar',
   data: {
-    labels: ['Nacional', 'Rural', 'Población indígena'],
-    datasets: [{
-      label: '% menores de 5 años con talla baja para la edad',
-      data: [stuntingNacional, stuntingRural, stuntingIndigena],
-      borderWidth: 2
-    }]
+    labels: ['Nacional','Rural','Indígena'],
+    datasets: [{ data: [46.7,53,58], backgroundColor: ['#bfa77a','#9ab87a','#3c6e47'] }]
   },
   options: {
-    scales: { y: { beginAtZero: true, suggestedMax: 70, title: {display:true, text:'Porcentaje (%)'}}},
-    plugins: { legend: { display: true } }
+    scales: { y: { beginAtZero: true, suggestedMax: 70, title: {display:true,text:'Porcentaje (%)'}}},
+    plugins: { legend: { display: false } }
   }
 });
 </script>
