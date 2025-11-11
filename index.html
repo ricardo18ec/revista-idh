@@ -400,6 +400,165 @@
     <li>INE Guatemala. (2024). <em>Género y Pueblos / Compendios y ENCOVI 2023</em>. https://www.ine.gob.gt/genero-y-pueblos/ :contentReference[oaicite:28]{index=28}</li>
   </ol>
 </section>
+<!-- ========= SECCIÓN: SALUD E INDICADORES ========= -->
+<section id="salud" style="padding:20px;max-width:900px;margin:auto;">
+  <h2 style="color:#3c6e47;border-bottom:2px solid #bfa77a;padding-bottom:6px;">
+    Gráficos sobre indicadores de salud en Guatemala
+  </h2>
+
+  <!-- ====== Gráfico 1: Esperanza de vida al nacer por género (2023) ====== -->
+  <h3 style="color:#3c6e47;margin-top:24px;">Esperanza de vida al nacer por género (2023)</h3>
+  <canvas id="vidaGenero" width="800" height="360"></canvas>
+  <p id="exp-vida" style="margin-top:8px;">
+    En 2023, la esperanza de vida femenina superó a la masculina por ~4.6 años. Esta brecha de género es consistente con los patrones regionales, 
+    pero también refleja desafíos en mortalidad por causas evitables en hombres y en determinantes sociales de la salud.
+  </p>
+
+  <!-- ====== Gráfico 2: Mortalidad materna por pertenencia étnica (referencia reciente y estudio) ====== -->
+  <h3 style="color:#3c6e47;margin-top:28px;">Tasa de mortalidad materna por grupo étnico (ejemplo comparativo)</h3>
+  <canvas id="mmrEtnico" width="800" height="360"></canvas>
+  <p style="margin-top:8px;">
+    La evidencia muestra que la mortalidad materna en mujeres indígenas ha sido más del doble que en no indígenas. El gráfico ilustra 
+    la brecha reportada en literatura y resalta la necesidad de servicios culturalmente pertinentes y accesibles.
+  </p>
+
+  <!-- ====== Gráfico 3: Acceso a servicios esenciales (índice de cobertura UHC) ====== -->
+  <h3 style="color:#3c6e47;margin-top:28px;">Acceso a servicios esenciales de salud (Índice UHC, 0–100)</h3>
+  <canvas id="uhcIndice" width="800" height="360"></canvas>
+  <p style="margin-top:8px;">
+    El índice de Cobertura de Servicios de Salud (UHC, SDG 3.8.1) sintetiza 14 trazadores de cobertura. Un valor cercano a 59 (2021) 
+    sugiere avances parciales con margen para mejorar capacidad instalada, detección de ENT y atención materno-infantil.
+  </p>
+
+  <!-- ====== Gráfico 4: Desnutrición crónica (talla baja para la edad, <5 años) ====== -->
+  <h3 style="color:#3c6e47;margin-top:28px;">Desnutrición crónica en menores de 5 años</h3>
+  <canvas id="stunting" width="800" height="360"></canvas>
+  <p style="margin-top:8px;">
+    La desnutrición crónica sigue siendo una de las más altas de la región. El valor nacional ronda 46–47%, con mayor afectación en áreas rurales y población indígena, 
+    condicionando el desarrollo cognitivo y educativo.
+  </p>
+
+  <!-- ============== PROBLEMA DE SALUD PÚBLICA + ANÁLISIS ============== -->
+  <h3 style="color:#3c6e47;margin-top:32px;">Situación/problema de salud pública: Desnutrición crónica infantil</h3>
+  <p>
+    La desnutrición crónica afecta aproximadamente a 46–47% de niñas y niños menores de 5 años en Guatemala; es la más alta de América Latina y una de las más elevadas del mundo. 
+    Se asocia con anemia infantil, menor rendimiento escolar y menores ingresos futuros. 
+  </p>
+  <p>
+    <strong>Factores sociales y económicos:</strong> pobreza persistente, inseguridad alimentaria, dietas con baja diversidad, menor acceso a agua segura y saneamiento en áreas rurales, 
+    y barreras culturales/lingüísticas que afectan el uso de servicios. <strong>Factores estatales:</strong> cobertura desigual de servicios de salud y nutrición, 
+    limitada capacidad de la APS en territorios remotos, y necesidad de mayor articulación intersectorial (salud, educación, agua/saneamiento y protección social).
+  </p>
+
+  <!-- ============== ESTRATEGIAS DEL MSPAS (2024+) ============== -->
+  <h3 style="color:#3c6e47;margin-top:28px;">Estrategias recientes del MSPAS (2024 en adelante)</h3>
+  <ul>
+    <li>Impulso de <em>Redes Integradas de Servicios de Salud</em> basadas en Atención Primaria de Salud (APS) para ampliar acceso, continuidad e integralidad del cuidado.</li>
+    <li>Fortalecimiento de rectoría/gobernanza y uso de indicadores (cobertura, eficiencia, abandono de tratamientos) para orientar gestión territorial.</li>
+    <li>Articulación con la Política General de Gobierno 2024–2028 para priorizar inversión pública en primero y segundo nivel de atención, remozamiento y provisión de insumos.</li>
+  </ul>
+
+  <!-- ============== ACTIVIDAD DE REFLEXIÓN ============== -->
+  <h3 style="color:#3c6e47;margin-top:28px;">Actividad de reflexión</h3>
+  <ol>
+    <li><strong>¿La salud es una decisión individual?</strong> No en sentido estricto: la conducta individual importa, pero los determinantes sociales (ingresos, educación, territorio, etnicidad, género) 
+      condicionan riesgos y acceso. Una visión de “responsabilidad compartida” entre personas y Estado es más realista.</li>
+    <li><strong>¿Acciones aún no implementadas a escala?</strong> Paquetes integrales de APS con pertinencia lingüístico-cultural en todos los municipios; 
+      expansión de tele-salud en áreas sin especialistas; mejora de transporte sanitario y cadenas de frío; 
+      compras públicas de medicamentos con mayor transparencia para reducir gasto de bolsillo; 
+      y escalamiento de intervenciones de nutrición materno-infantil basadas en evidencia (visitas domiciliarias, suplementación y educación alimentaria en lengua materna).</li>
+  </ol>
+</section>
+
+<!-- Librería para los gráficos -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+// ====== Datos (con fuentes) ======
+// Vida por género 2023 (World Bank -> TradingEconomics mirrors)
+const vidaMujer = 74.88; // años
+const vidaHombre = 70.31; // años
+
+// MMR por etnicidad (referencia ilustrativa de brecha ~2x; estudio y síntesis)
+const mmrIndigena = 163;  // por 100,000 nv
+const mmrNoIndigena = 78; // por 100,000 nv
+
+// UHC Service Coverage Index (0-100) Guatemala 2021
+const uhcGT = 59;
+
+// Stunting (% <5 años). Valor nacional ~46.7% (UNICEF 2024, ref ENSMI)
+const stuntingNacional = 46.7;
+const stuntingRural = 53.0;   // referenciado (mayor en rural)
+const stuntingIndigena = 58.0; // referenciado (mayor en población indígena)
+
+// ====== Chart 1: Esperanza de vida por género ======
+new Chart(document.getElementById('vidaGenero').getContext('2d'), {
+  type: 'bar',
+  data: {
+    labels: ['Hombres', 'Mujeres'],
+    datasets: [{
+      label: 'Años',
+      data: [vidaHombre, vidaMujer],
+      borderWidth: 2
+    }]
+  },
+  options: {
+    scales: { y: { beginAtZero: false, suggestedMin: 60, suggestedMax: 80, title: {display:true, text:'Años'}}},
+    plugins: { legend: { display: false } }
+  }
+});
+
+// ====== Chart 2: Mortalidad materna por grupo étnico ======
+new Chart(document.getElementById('mmrEtnico').getContext('2d'), {
+  type: 'bar',
+  data: {
+    labels: ['Indígena', 'No indígena'],
+    datasets: [{
+      label: 'Tasa por 100,000 nv (ej. estudio)',
+      data: [mmrIndigena, mmrNoIndigena],
+      borderWidth: 2
+    }]
+  },
+  options: {
+    scales: { y: { beginAtZero: true, title: {display:true, text:'Muertes maternas por 100,000 nacidos vivos'}}},
+    plugins: { legend: { display: false } }
+  }
+});
+
+// ====== Chart 3: Índice UHC (cobertura de servicios esenciales) ======
+new Chart(document.getElementById('uhcIndice').getContext('2d'), {
+  type: 'bar',
+  data: {
+    labels: ['Guatemala (2021)'],
+    datasets: [{
+      label: 'Índice UHC (0–100)',
+      data: [uhcGT],
+      borderWidth: 2
+    }]
+  },
+  options: {
+    scales: { y: { beginAtZero: true, suggestedMax: 100, title: {display:true, text:'Puntaje (0–100)'}}},
+    plugins: { legend: { display: false } }
+  }
+});
+
+// ====== Chart 4: Desnutrición crónica (<5 años) ======
+new Chart(document.getElementById('stunting').getContext('2d'), {
+  type: 'bar',
+  data: {
+    labels: ['Nacional', 'Rural', 'Población indígena'],
+    datasets: [{
+      label: '% menores de 5 años con talla baja para la edad',
+      data: [stuntingNacional, stuntingRural, stuntingIndigena],
+      borderWidth: 2
+    }]
+  },
+  options: {
+    scales: { y: { beginAtZero: true, suggestedMax: 70, title: {display:true, text:'Porcentaje (%)'}}},
+    plugins: { legend: { display: true } }
+  }
+});
+</script>
 
 
 </body>
