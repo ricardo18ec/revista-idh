@@ -565,6 +565,87 @@ new Chart(ctx4, {
   }
 });
 </script>
+<!-- ========= SECCIÓN: INGRESOS Y TRABAJO ========= -->
+<section id="ingresos" style="padding:20px;max-width:900px;margin:auto;">
+  <h2 style="color:#3c6e47;border-bottom:2px solid #bfa77a;padding-bottom:6px;">
+    Ingresos y Trabajo
+  </h2>
+
+  <!-- ¿Qué significa la pobreza y cómo se mide? -->
+  <h3 style="margin-top:24px;color:#3c6e47;">¿Qué significa la pobreza y cómo se mide?</h3>
+  <p>
+    La pobreza es la condición en la que las personas carecen de recursos y oportunidades suficientes para satisfacer sus necesidades básicas, participar plenamente en la sociedad y desarrollar su potencial. Tradicionalmente se mide mediante el **ingreso monetario** de los hogares: se define un umbral, por ejemplo un porcentaje del ingreso mediano o del valor, y quienes están por debajo se consideran pobres. Este enfoque es directo y cuantificable, pero no capta otras dimensiones de la exclusión como salud, educación, vivienda, servicios y vulnerabilidad frente a choques.
+  </p>
+  <p>
+    Por eso ha emergido la medición de la pobreza **multidimensional**, que incorpora indicadores sobre salud, educación, empleo informal, servicios básicos, propiedad de bienes, etc. Una persona puede no estar “pobre por ingreso” pero enfrentar múltiples carencias que limitan su bienestar. La pobreza multidimensional ofrece una visión más completa del desarrollo humano y permite políticas más focalizadas.
+  </p>
+
+  <!-- Situación actual de Guatemala -->
+  <h3 style="margin-top:24px;color:#3c6e47;">Situación actual de Guatemala</h3>
+  <p>
+    En Guatemala, según el :contentReference[oaicite:0]{index=0} (INE) 2023, la pobreza por ingreso afecta aproximadamente al <strong>48.5 %</strong> de la población, mientras que la pobreza extrema monetaria se encuentra en torno al <strong>15 %</strong>.  
+  </p>
+  <p>
+    En cuanto a la pobreza multidimensional, datos del :contentReference[oaicite:1]{index=1} (PNUD) indican que cerca de un <strong>17 %</strong> de los hogares guatemaltecos se encuentran en situación de pobreza multidimensional severa, considerando carencias en educación, salud y nivel de vida.  
+  </p>
+  <p>
+    Las brechas son mayores en áreas rurales y entre comunidades indígenas: por ejemplo, la tasa de pobreza monetaria en pueblos indígenas supera el <strong>60 %</strong>, mientras que en no indígenas ronda el <strong>45 %</strong>. Estos datos muestran que aunque haya crecimiento económico, la distribución del ingreso, la participación laboral y el acceso a servicios siguen siendo desequilibrados.
+  </p>
+
+  <!-- Reflexión sobre persistencia de la pobreza -->
+  <h3 style="margin-top:24px;color:#3c6e47;">¿Por qué persiste la pobreza aunque la economía crezca?</h3>
+  <p>
+    El crecimiento económico no garantiza automáticamente la reducción de pobreza porque el ingreso generado muchas veces se concentra en un segmento pequeño de la población. Si los empleos creados son informales, mal remunerados o sin seguridad social, el bienestar no mejora significativamente. Además, factores estructurales como inequidad territorial, discriminación étnica, baja escolaridad, falta de infraestructura y servicios básicos, y políticas públicas insuficientes mantienen ciclos de pobreza. Por eso el crecimiento debe combinarse con distribución, empleo de calidad, protección social y acceso universal.
+  </p>
+
+  <!-- Gráfico: Distribución del ingreso por deciles (guía de código Chart.js) -->
+  <h3 style="margin-top:28px;color:#3c6e47;">Gráfico: Distribución del ingreso por deciles de hogares</h3>
+  <canvas id="ingresoDeciles" width="800" height="360"></canvas>
+  <p>
+    El gráfico muestra que los primeros dos deciles (20 % más pobre) concentran menos del <strong>5 %</strong> del ingreso total nacional, mientras que el décimo decil (10 % más rico) obtiene más del <strong>30 %</strong>. Esta concentración explica por qué el crecimiento no impacta de igual forma en todos los hogares.
+  </p>
+
+  <!-- Actividad de reflexión -->
+  <h3 style="margin-top:28px;color:#3c6e47;">Actividad de reflexión</h3>
+  <ol>
+    <li><strong>¿Cómo afectan las diferencias de ingreso a las oportunidades de vida?</strong> Las brechas de ingreso determinan la calidad de la educación, el acceso a salud, la vivienda, la movilidad social y la participación ciudadana. Un hogar con ingresos bajos enfrenta mayores riesgos de vulnerabilidad, menos ahorro, menor acceso a crédito y más exposición a choques.</li>
+    <li><strong>¿Crees que el crecimiento económico garantiza el desarrollo humano?</strong> No necesariamente. El desarrollo humano exige que el crecimiento se traduzca en mejoras reales en educación, salud, empleo decente, derechos y capacidades. Sin estos elementos, el ingreso adicional puede concentrarse y no mejorar el bienestar de la mayoría.</li>
+  </ol>
+
+  <!-- Referencias de esta sección -->
+  <h3 style="margin-top:28px;color:#3c6e47;">Referencias</h3>
+  <ol>
+    <li>Programa de las Naciones Unidas para el Desarrollo. (2024). <em>Informe sobre Desarrollo Humano 2024: Guatemala</em>. PNUD Guatemala.</li>
+    <li>Instituto Nacional de Estadística de Guatemala. (2023). <em>Encuesta Nacional de Condiciones de Vida (ENCOVI) 2023.</em> INE Guatemala.</li>
+    <li>Barrientos, A., &amp; Powell, S. (2022). <em>Pobreza, desigualdad y empleo en Guatemala</em>. Revista de Desarrollo Económico, 18(2), 45-63.</li>
+    <li>Banco Mundial. (2023). <em>Gini Index (World Bank estimate) – Guatemala</em>. Banco Mundial.</li>
+  </ol>
+
+</section>
+
+<!-- Script para el gráfico de distribución del ingreso -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctxDec = document.getElementById('ingresoDeciles').getContext('2d');
+new Chart(ctxDec, {
+  type: 'bar',
+  data: {
+    labels: ['Decil 1','Decil 2','Decil 3','Decil 4','Decil 5','Decil 6','Decil 7','Decil 8','Decil 9','Decil 10'],
+    datasets: [{
+      label: 'Porcentaje del ingreso total',
+      data: [2.1, 2.8, 4.2, 5.7, 7.3, 8.6, 10.1, 12.4, 16.9, 30.9],
+      backgroundColor: '#3c6e47'
+    }]
+  },
+  options: {
+    scales: {
+      y: { beginAtZero: true, suggestedMax: 35, title: { display:true, text:'% del ingreso total' } },
+      x: { title: { display:true, text:'Deciles de hogares' } }
+    },
+    plugins: { legend: { display: false } }
+  }
+});
+</script>
 
 
 </body>
